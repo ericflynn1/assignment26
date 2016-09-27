@@ -4,12 +4,11 @@ app.controller("newsController", function ($scope, newsService) {
     $scope.news = newsService.newNews();
     $scope.hide = function(page){
         page.hide = true;
+        console.log('working');
 
     }
     
 });
-
-
 
 
 app.factory("newsService", function ($http) {
@@ -38,7 +37,7 @@ app.factory("newsService", function ($http) {
             // console.log(newsArticles);
             return newsArticles;
         },
-        // starIt: function (id) {
+        starIt: function (id) {
 
         //     // console.log('working');
         //     // for (let i = 0; i < newsArray.length; i++) {
@@ -48,7 +47,7 @@ app.factory("newsService", function ($http) {
         //     //         newsArray[i].starred = false;
         //     //     }
         //     // }
-        // }
+        }
             
     }
 });
