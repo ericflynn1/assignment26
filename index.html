@@ -8,10 +8,15 @@
 
     <body ng-controller="newsController">
         <h1>News Feed</h1>
-        <ul>
-        <li class="articles" ng-repeat="element in news">{{ element.title }}
-            <i ng-class="(element.starred) ? 'unhidden' : 'hidden'" class="fa fa-star" aria-hidden="true"></i>
-            <button ng-click="StarTheArticle(element.id)">Star</button>
+        <ol>
+        <li class="articles" ng-repeat="element in news">
+            <h2>{{ element.title }}</h2>
+            <p> {{ element.summary}}</p>
+            <h5> {{ element.publisher.name}}
+            <i ng-class="(element.starred) ? 'unhidden' : 'hidden'" class="starred" aria-hidden="true"></i>
+            <button ng-click="starIt(element.id)">Star</button>
+            <button ng-click="hideIt(element.id)">Hide</button>
+
             <!--<p>{{ element.starred }}</p>-->
         </li>
-    </ul>
+    </ol>
